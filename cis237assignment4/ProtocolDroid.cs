@@ -20,6 +20,11 @@ namespace cis237assignment4
             this.numberOfLanguages = NumberOfLanguages;
         }
 
+        public ProtocolDroid() : base()
+        {
+            this.numberOfLanguages = RandomNumberOfLanguages();
+        }
+
         //Overriden abstract method from the droid class.
         //It calculates the total cost using the baseCost method.
         public override void CalculateTotalCost()
@@ -35,6 +40,12 @@ namespace cis237assignment4
         {
             return base.ToString() +
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
+        }
+
+        private int RandomNumberOfLanguages()
+        {
+            Random rand = new Random();
+            return rand.Next(200);
         }
     }
 }

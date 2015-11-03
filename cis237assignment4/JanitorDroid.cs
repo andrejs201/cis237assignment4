@@ -23,6 +23,12 @@ namespace cis237assignment4
             this.hasVacuum = HasVacuum;
         }
 
+        public JanitorDroid() : base()
+        {
+            this.hasTrashCompactor = RandomTrashCompactor();
+            this.hasVacuum = RandomVacuum();
+        }
+
         //Override the CalculateCostOfOptions method.
         //Use the base class implementation of the method, and tack on the cost of the new options
         protected override decimal CalculateCostOfOptions()
@@ -50,6 +56,24 @@ namespace cis237assignment4
             return base.ToString() +
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
+        }
+
+        private bool RandomTrashCompactor()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
+        }
+
+        private bool RandomVacuum()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
         }
     }
 }

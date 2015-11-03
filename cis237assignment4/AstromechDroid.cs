@@ -26,6 +26,12 @@ namespace cis237assignment4
             this.numberOfShips = NumberOfShips;
         }
 
+        public AstromechDroid() : base()
+        {
+            this.hasFireExtinguisher = RandomFireExtinguisher();
+            this.numberOfShips = RandomNumberOfShips();
+        }
+
         //Overridden method to calculate the cost of options. Uses the base class to do some of the calculations
         protected override decimal CalculateCostOfOptions()
         {
@@ -62,6 +68,21 @@ namespace cis237assignment4
             return base.ToString() +
                 "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
+        }
+
+        private bool RandomFireExtinguisher()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
+        }
+
+        private int RandomNumberOfShips()
+        {
+            Random rand = new Random();
+            return rand.Next(200);
         }
     }
 }

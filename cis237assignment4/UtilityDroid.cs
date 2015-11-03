@@ -26,6 +26,13 @@ namespace cis237assignment4
             this.hasArm = HasArm;
         }
 
+        public UtilityDroid() : base()
+        {
+            this.hasToolbox = RandomToolBox();
+            this.hasComputerConnection = RandomComputerConnection();
+            this.hasArm = RandomArm();
+        }
+
         //virtual method to calculate the cost of the options. This method can be overridden in child classes
         //to calculate the cost of options
         protected virtual decimal CalculateCostOfOptions()
@@ -67,6 +74,33 @@ namespace cis237assignment4
                 "Has Tool Box: " + this.hasToolbox + Environment.NewLine +
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
                 "Has Arm: " + this.hasArm + Environment.NewLine;
+        }
+
+        private bool RandomToolBox()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
+        }
+
+        private bool RandomComputerConnection()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
+        }
+
+        private bool RandomArm()
+        {
+            Random rand = new Random();
+            if (rand.Next(2) == 0)
+                return true;
+            else
+                return false;
         }
     }
 }

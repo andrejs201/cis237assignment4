@@ -32,6 +32,13 @@ namespace cis237assignment4
             this.color = Color;
         }
 
+        public Droid()
+        {
+            this.model = RandomModel();
+            this.material = RandomMaterial();
+            this.color = RandomColor();
+        }
+
         //Virtual method that can be overridden in the derived classes if needed.
         //This implementation calculates the cost based on the material used for the droid
         protected virtual void CalculateBaseCost()
@@ -65,6 +72,60 @@ namespace cis237assignment4
             return "Material: " + this.material + Environment.NewLine +
                     "Model: " + this.model + Environment.NewLine +
                     "Color: " + this.color + Environment.NewLine;
+        }
+
+        private string RandomModel()
+        {
+            Random rand = new Random();
+            switch (rand.Next(0,4))
+            {
+                case 0:
+                    return "Astromech";
+
+                case 1:
+                    return "Janitor";
+
+                case 2:
+                    return "Utility";
+
+                case 3:
+                    return "Protocol";
+            }
+            return "Model Error";
+        }
+
+        private string RandomMaterial()
+        {
+            Random rand = new Random();
+            switch (rand.Next(0, 3))
+            {
+                case 0:
+                    return "Carbonite";
+
+                case 1:
+                    return "Vanadium";
+
+                case 2:
+                    return "Quadranium";
+            }
+            return "Material Error";
+        }
+
+        private string RandomColor()
+        {
+            Random rand = new Random();
+            switch (rand.Next(0, 3))
+            {
+                case 0:
+                    return "Bronze";
+
+                case 1:
+                    return "Silver";
+
+                case 2:
+                    return "Gold";
+            }
+            return "Color Error";
         }
     }
 }

@@ -26,6 +26,39 @@ namespace cis237assignment4
             lengthOfCollection = 0;
         }
 
+        public bool Add()
+        {
+            if (lengthOfCollection < (droidCollection.Length - 1))
+            {
+                Random rand = new Random();
+                switch (rand.Next(4))
+                {
+                    case 0:
+                        droidCollection[lengthOfCollection] = new AstromechDroid();
+                        break;
+
+                    case 1:
+                        droidCollection[lengthOfCollection] = new JanitorDroid();
+                        break;
+
+                    case 2:
+                        droidCollection[lengthOfCollection] = new UtilityDroid();
+                        break;
+
+                    case 3:
+                        droidCollection[lengthOfCollection] = new ProtocolDroid();
+                        break;
+                }
+                return true;
+            }
+            //Else, there is no room for the droid
+            else
+            {
+                //Return false
+                return false;
+            }
+        }
+
         //The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
         public bool Add(string Material, string Model, string Color, int NumberOfLanguages)
         {
