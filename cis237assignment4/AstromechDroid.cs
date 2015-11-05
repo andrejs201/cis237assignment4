@@ -28,6 +28,7 @@ namespace cis237assignment4
 
         public AstromechDroid() : base()
         {
+            this.model = "Astromech";
             this.hasFireExtinguisher = RandomFireExtinguisher();
             this.numberOfShips = RandomNumberOfShips();
         }
@@ -73,7 +74,8 @@ namespace cis237assignment4
         private bool RandomFireExtinguisher()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
@@ -82,7 +84,13 @@ namespace cis237assignment4
         private int RandomNumberOfShips()
         {
             Random rand = new Random();
+            System.Threading.Thread.Sleep(1);
             return rand.Next(200);
+        }
+
+        public override int CompareTo(object obj)
+        {
+            return 0;
         }
     }
 }

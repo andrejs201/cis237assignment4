@@ -44,6 +44,10 @@
     <Compile Include="AstromechDroid.cs" />
     <Compile Include="Droid.cs" />
     <Compile Include="DroidCollection.cs" />
+    <Compile Include="GenericLinkedList.cs" />
+    <Compile Include="GenericNode.cs" />
+    <Compile Include="GenericQueue.cs" />
+    <Compile Include="GenericStack.cs" />
     <Compile Include="IDroid.cs" />
     <Compile Include="IDroidCollection.cs" />
     <Compile Include="JanitorDroid.cs" />

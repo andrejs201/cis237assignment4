@@ -34,7 +34,7 @@ namespace cis237assignment4
 
         public Droid()
         {
-            this.model = RandomModel();
+            //this.model = RandomModel();
             this.material = RandomMaterial();
             this.color = RandomColor();
         }
@@ -127,5 +127,8 @@ namespace cis237assignment4
             }
             return "Color Error";
         }
+
+        public abstract int CompareTo(object obj);
+        
     }
 }

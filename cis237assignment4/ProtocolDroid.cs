@@ -22,6 +22,7 @@ namespace cis237assignment4
 
         public ProtocolDroid() : base()
         {
+            this.model = "Protocol";
             this.numberOfLanguages = RandomNumberOfLanguages();
         }
 
@@ -45,7 +46,13 @@ namespace cis237assignment4
         private int RandomNumberOfLanguages()
         {
             Random rand = new Random();
+            System.Threading.Thread.Sleep(1);
             return rand.Next(200);
+        }
+
+        public override int CompareTo(object obj)
+        {
+            return 0;
         }
     }
 }

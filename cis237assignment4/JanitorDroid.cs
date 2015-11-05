@@ -25,6 +25,7 @@ namespace cis237assignment4
 
         public JanitorDroid() : base()
         {
+            this.model = "Janitor";
             this.hasTrashCompactor = RandomTrashCompactor();
             this.hasVacuum = RandomVacuum();
         }
@@ -61,7 +62,8 @@ namespace cis237assignment4
         private bool RandomTrashCompactor()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
@@ -70,10 +72,16 @@ namespace cis237assignment4
         private bool RandomVacuum()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
+        }
+
+        public override int CompareTo(object obj)
+        {
+            return 0;
         }
     }
 }

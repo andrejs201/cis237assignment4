@@ -10,6 +10,7 @@ namespace cis237assignment4
     interface IDroidCollection
     {
         //Various overloaded Add methods to add a new droid to the collection
+        void Add(int loop);
         bool Add(string Material, string Model, string Color, int NumberOfLanguages);
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm);
         bool Add(string Material, string Model, string Color, bool HasToolBox, bool HasComputerConnection, bool HasArm, bool HasTrashCompactor, bool HasVaccum);

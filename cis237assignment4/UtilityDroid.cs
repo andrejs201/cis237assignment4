@@ -28,6 +28,7 @@ namespace cis237assignment4
 
         public UtilityDroid() : base()
         {
+            this.model = "Utility";
             this.hasToolbox = RandomToolBox();
             this.hasComputerConnection = RandomComputerConnection();
             this.hasArm = RandomArm();
@@ -79,7 +80,8 @@ namespace cis237assignment4
         private bool RandomToolBox()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
@@ -88,7 +90,8 @@ namespace cis237assignment4
         private bool RandomComputerConnection()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
@@ -97,10 +100,16 @@ namespace cis237assignment4
         private bool RandomArm()
         {
             Random rand = new Random();
-            if (rand.Next(2) == 0)
+            System.Threading.Thread.Sleep(1);
+            if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
+        }
+
+        public override int CompareTo(object obj)
+        {
+            return 0;
         }
     }
 }

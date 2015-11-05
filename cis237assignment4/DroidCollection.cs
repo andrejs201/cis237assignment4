@@ -26,11 +26,12 @@ namespace cis237assignment4
             lengthOfCollection = 0;
         }
 
-        public bool Add()
+        public void Add(int loop)
         {
-            if (lengthOfCollection < (droidCollection.Length - 1))
+            Random rand = new Random();
+            for (int i = 0; i < loop; i++)
             {
-                Random rand = new Random();
+                System.Threading.Thread.Sleep(1);
                 switch (rand.Next(4))
                 {
                     case 0:
@@ -49,13 +50,7 @@ namespace cis237assignment4
                         droidCollection[lengthOfCollection] = new ProtocolDroid();
                         break;
                 }
-                return true;
-            }
-            //Else, there is no room for the droid
-            else
-            {
-                //Return false
-                return false;
+                lengthOfCollection++;
             }
         }
 

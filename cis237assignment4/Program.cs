@@ -12,6 +12,8 @@ namespace cis237assignment4
         {
             //Create a new droid collection and set the size of it to 100.
             IDroidCollection droidCollection = new DroidCollection(100);
+            //Add 12 random droids
+            droidCollection.Add(12);
 
             //Create a user interface and pass the droidCollection into it as a dependency
             UserInterface userInterface = new UserInterface(droidCollection);
