@@ -28,7 +28,7 @@ namespace cis237assignment4
             int choice = userInterface.GetMenuChoice();
 
             //While the choice is not equal to 3, continue to do work with the program
-            while (choice != 3)
+            while (choice != 4)
             {
                 //Test which choice was made
                 switch (choice)
@@ -41,6 +41,13 @@ namespace cis237assignment4
                     //Choose to Print the droid
                     case 2:
                         userInterface.PrintDroidList();
+                        break;
+
+                    case 3:
+                        userInterface.Organize();
+                        break;
+
+                    case 4:
                         break;
                 }
                 //Re-display the menu, and re-prompt for the choice

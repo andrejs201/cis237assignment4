@@ -31,7 +31,8 @@ namespace cis237assignment4
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
-            Console.WriteLine("3. Exit the program");
+            Console.WriteLine("3. Organize the list of droids by type");
+            Console.WriteLine("4. Exit the program");
         }
 
         //Method to get a menu choice
@@ -332,6 +333,11 @@ namespace cis237assignment4
                     this.droidCollection.Add(Material, Model, Color, standardOptions[0], standardOptions[1], standardOptions[2], astromechOption, astromechNumberOfShips);
                     break;
             }
+        }
+
+        public void Organize()
+        {
+            droidCollection.Organize();
         }
 
     }

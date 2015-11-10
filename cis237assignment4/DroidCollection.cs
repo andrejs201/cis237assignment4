@@ -152,5 +152,75 @@ namespace cis237assignment4
             //return the completed string
             return returnString;
         }
+
+        public bool Organize()
+        {
+            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
+            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+
+            GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
+
+            for (int i = 0; i < lengthOfCollection; i++)
+            {
+                try
+                {
+                    astromechStack.Add((AstromechDroid)droidCollection[i]);
+                }
+                catch
+                {
+                    try
+                    {
+                        janitorStack.Add((JanitorDroid)droidCollection[i]);
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            utilityStack.Add((UtilityDroid)droidCollection[i]);
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                protocolStack.Add((ProtocolDroid)droidCollection[i]);
+                            }
+                            catch
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            while (astromechStack.Head != null)
+            {
+                droidQueue.Add((IDroid)astromechStack.Pop());
+            }
+
+            while (janitorStack.Head != null)
+            {
+                droidQueue.Add((IDroid)janitorStack.Pop());
+            }
+
+            while (utilityStack.Head != null)
+            {
+                droidQueue.Add((IDroid)utilityStack.Pop());
+            }
+
+            while (protocolStack.Head != null)
+            {
+                droidQueue.Add((IDroid)protocolStack.Pop());
+            }
+
+            for (int i = 0; droidQueue.Head != null; i++)
+            {
+                droidCollection[i] = (IDroid)droidQueue.Dequeue();
+            }
+
+                return true;
+        }
     }
 }

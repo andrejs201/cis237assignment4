@@ -12,6 +12,18 @@ namespace cis237assignment4
         {
             GenericNode<T> returnNode = new GenericNode<T>();
 
+            if (this.Head == null)
+            {
+                returnNode = null;
+            }
+            else
+            {
+                returnNode = this.Head;
+                this.Head.Next = this.Head;
+                this.Head.Previous = null;
+                this.Length--;
+            }
+
             return returnNode;
         }
     }

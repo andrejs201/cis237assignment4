@@ -24,7 +24,7 @@ namespace cis237assignment4
             Length = 0;
         }
 
-        protected void Add(T content)
+        public void Add(T content)
         {
             GenericNode<T> newNode = new GenericNode<T>();
             newNode.Data = content;
