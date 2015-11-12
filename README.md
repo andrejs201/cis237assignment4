@@ -2,7 +2,7 @@
 ## Due: 11-10-2015
 
 ## Author
-
+Andrejs Tomsons
 
 
 ## Description
@@ -66,11 +66,12 @@ The code in the Algorithms book for Stack, Queue, and Merge Sort are in Java. It
 Be sure to think about what the time complexity for the bucket sort will be. Think about how it compares to that of a normal sort such as Merge or Bubble. Also consider the space complexity compared to that of merge or bubble sort. You may see questions related to this on the next exam.
 
 ## Outside Resources Used
-
+mergesort code found here:
+http://www.softwareandfinance.com/CSharp/MergeSort_Recursive.html
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+none
 
 
 ## Assignment 3 Description for reference

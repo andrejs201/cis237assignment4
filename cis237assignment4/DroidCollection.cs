@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace cis237assignment4
             lengthOfCollection = 0;
         }
 
+        //Add method to add a random droid with a size indicator
         public void Add(int loop)
         {
             Random rand = new Random();
@@ -153,6 +155,7 @@ namespace cis237assignment4
             return returnString;
         }
 
+        //method to organize droids by type
         public bool Organize()
         {
             GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
@@ -162,6 +165,7 @@ namespace cis237assignment4
 
             GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
 
+            //Add droids to appropriate stack types
             for (int i = 0; i < lengthOfCollection; i++)
             {
                 try
@@ -188,13 +192,14 @@ namespace cis237assignment4
                             }
                             catch
                             {
-
+                                return false;
                             }
                         }
                     }
                 }
             }
 
+            //Add droids in order to the queue
             while (astromechStack.Head != null)
             {
                 droidQueue.Add((IDroid)astromechStack.Pop());
@@ -215,12 +220,21 @@ namespace cis237assignment4
                 droidQueue.Add((IDroid)protocolStack.Pop());
             }
 
-            for (int i = 0; droidQueue.Head != null; i++)
+            //Dequeue droids back into the array
+            for (int i = 0; droidQueue.Tail != null; i++)
             {
                 droidCollection[i] = (IDroid)droidQueue.Dequeue();
             }
 
                 return true;
+        }
+
+        //Method to sort by total cost
+        public bool Sort()
+        {
+            //Call MergeSort's constructor which automatically sorts it.
+            MergeSort mergeSort = new MergeSort(this.droidCollection, this.lengthOfCollection);
+            return true;
         }
     }
 }

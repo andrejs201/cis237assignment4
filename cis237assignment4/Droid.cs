@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace cis237assignment4
 
         protected decimal baseCost;
         protected decimal totalCost;
+
+        //Const to set sleep time so that all randomly created variables are not the same
+        protected const int SLEEP_TIME = 5;
 
         //The public property for TotalCost
         public decimal TotalCost
@@ -74,29 +78,11 @@ namespace cis237assignment4
                     "Color: " + this.color + Environment.NewLine;
         }
 
-        private string RandomModel()
-        {
-            Random rand = new Random();
-            switch (rand.Next(0,4))
-            {
-                case 0:
-                    return "Astromech";
-
-                case 1:
-                    return "Janitor";
-
-                case 2:
-                    return "Utility";
-
-                case 3:
-                    return "Protocol";
-            }
-            return "Model Error";
-        }
-
+        //Randome material
         private string RandomMaterial()
         {
             Random rand = new Random();
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             switch (rand.Next(0, 3))
             {
                 case 0:
@@ -111,9 +97,11 @@ namespace cis237assignment4
             return "Material Error";
         }
 
+        //Random color
         private string RandomColor()
         {
             Random rand = new Random();
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             switch (rand.Next(0, 3))
             {
                 case 0:
@@ -128,7 +116,13 @@ namespace cis237assignment4
             return "Color Error";
         }
 
-        public abstract int CompareTo(object obj);
+        //Compares the droid with another
+        public int CompareTo(object obj)
+        {
+            Droid tempDroid = (Droid)obj;
+
+            return this.totalCost.CompareTo(tempDroid.totalCost);
+        }
         
     }
 }

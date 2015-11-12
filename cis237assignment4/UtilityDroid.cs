@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,12 +27,14 @@ namespace cis237assignment4
             this.hasArm = HasArm;
         }
 
+        //constructor to create a random Utility droid
         public UtilityDroid() : base()
         {
             this.model = "Utility";
             this.hasToolbox = RandomToolBox();
             this.hasComputerConnection = RandomComputerConnection();
             this.hasArm = RandomArm();
+            this.CalculateTotalCost();
         }
 
         //virtual method to calculate the cost of the options. This method can be overridden in child classes
@@ -77,39 +80,37 @@ namespace cis237assignment4
                 "Has Arm: " + this.hasArm + Environment.NewLine;
         }
 
+        //Random tool box
         private bool RandomToolBox()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
         }
 
+        //random computer connection
         private bool RandomComputerConnection()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
         }
 
+        //Random arm
         private bool RandomArm()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
-        }
-
-        public override int CompareTo(object obj)
-        {
-            return 0;
         }
     }
 }

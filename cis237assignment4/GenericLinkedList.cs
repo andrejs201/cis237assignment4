@@ -37,6 +37,7 @@ namespace cis237assignment4
             }
             else
             {
+                Head.Previous = newNode;
                 newNode.Next = Head;
                 Head = newNode;
                 Length++;

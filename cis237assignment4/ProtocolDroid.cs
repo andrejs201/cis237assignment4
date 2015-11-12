@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,12 @@ namespace cis237assignment4
             this.numberOfLanguages = NumberOfLanguages;
         }
 
+        //constructor to create a random Protocol droid
         public ProtocolDroid() : base()
         {
             this.model = "Protocol";
             this.numberOfLanguages = RandomNumberOfLanguages();
+            this.CalculateTotalCost();
         }
 
         //Overriden abstract method from the droid class.
@@ -43,16 +46,12 @@ namespace cis237assignment4
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
         }
 
+        //Random number of languages
         private int RandomNumberOfLanguages()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
-            return rand.Next(200);
-        }
-
-        public override int CompareTo(object obj)
-        {
-            return 0;
+            System.Threading.Thread.Sleep(SLEEP_TIME);
+            return rand.Next(50);
         }
     }
 }

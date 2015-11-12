@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace cis237assignment4
         //Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
 
+        //Sorting and organizing methods
         bool Organize();
+        bool Sort();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +33,8 @@ namespace cis237assignment4
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Organize the list of droids by type");
-            Console.WriteLine("4. Exit the program");
+            Console.WriteLine("4. Sort the list of droids by total cost");
+            Console.WriteLine("5. Exit the program");
         }
 
         //Method to get a menu choice
@@ -335,9 +337,26 @@ namespace cis237assignment4
             }
         }
 
+        //Method to organize droids by type
         public void Organize()
         {
+            //Organize here
             droidCollection.Organize();
+
+            Console.WriteLine();
+            Console.WriteLine("The droids have been organised by type.(Astromech, Janitor, Utility, Protocol)");
+            Console.WriteLine();
+        }
+
+        //method to sort droids by total cost
+        public void Sort()
+        {
+            //Sort here
+            droidCollection.Sort();
+
+            Console.WriteLine();
+            Console.WriteLine("The droids have been organised by total cost.(low to high)");
+            Console.WriteLine();
         }
 
     }

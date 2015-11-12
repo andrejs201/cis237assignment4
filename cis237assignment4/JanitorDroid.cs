@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,13 @@ namespace cis237assignment4
             this.hasVacuum = HasVacuum;
         }
 
+        //constructor to create a random Janitor droid
         public JanitorDroid() : base()
         {
             this.model = "Janitor";
             this.hasTrashCompactor = RandomTrashCompactor();
             this.hasVacuum = RandomVacuum();
+            this.CalculateTotalCost();
         }
 
         //Override the CalculateCostOfOptions method.
@@ -59,29 +62,26 @@ namespace cis237assignment4
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
         }
 
+        //random trash compactor
         private bool RandomTrashCompactor()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
         }
 
+        //random vacuum
         private bool RandomVacuum()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
-        }
-
-        public override int CompareTo(object obj)
-        {
-            return 0;
         }
     }
 }

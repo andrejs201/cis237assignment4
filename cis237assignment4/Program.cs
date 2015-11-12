@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace cis237assignment4
             int choice = userInterface.GetMenuChoice();
 
             //While the choice is not equal to 3, continue to do work with the program
-            while (choice != 4)
+            while (choice != 5)
             {
                 //Test which choice was made
                 switch (choice)
@@ -43,11 +44,17 @@ namespace cis237assignment4
                         userInterface.PrintDroidList();
                         break;
 
+                    //Choose to organize droids by type
                     case 3:
                         userInterface.Organize();
                         break;
 
+                    //Choose to sort droids by total cost
                     case 4:
+                        userInterface.Sort();
+                        break;
+
+                    case 5:
                         break;
                 }
                 //Re-display the menu, and re-prompt for the choice

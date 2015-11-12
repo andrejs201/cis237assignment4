@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Andrejs Tomsons CIS 237 assignment 4
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,11 +27,13 @@ namespace cis237assignment4
             this.numberOfShips = NumberOfShips;
         }
 
+        //constructor to create a random Astromech droid
         public AstromechDroid() : base()
         {
             this.model = "Astromech";
             this.hasFireExtinguisher = RandomFireExtinguisher();
             this.numberOfShips = RandomNumberOfShips();
+            this.CalculateTotalCost();
         }
 
         //Overridden method to calculate the cost of options. Uses the base class to do some of the calculations
@@ -71,26 +74,23 @@ namespace cis237assignment4
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
         }
 
+        //Random fire extinguisher
         private bool RandomFireExtinguisher()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
+            System.Threading.Thread.Sleep(SLEEP_TIME);
             if (rand.Next(0, 2) == 0)
                 return true;
             else
                 return false;
         }
 
+        //Random number of ships
         private int RandomNumberOfShips()
         {
             Random rand = new Random();
-            System.Threading.Thread.Sleep(1);
-            return rand.Next(200);
-        }
-
-        public override int CompareTo(object obj)
-        {
-            return 0;
+            System.Threading.Thread.Sleep(SLEEP_TIME);
+            return rand.Next(50);
         }
     }
 }

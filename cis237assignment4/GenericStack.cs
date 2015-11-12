@@ -8,23 +8,25 @@ namespace cis237assignment4
 {
     class GenericStack<T> : GenericLinkedList<T>
     {
-        public GenericNode<T> Pop()
+        public T Pop()
         {
-            GenericNode<T> returnNode = new GenericNode<T>();
+            T returnData = default(T);
+            GenericNode<T> tempNode = new GenericNode<T>();
 
-            if (this.Head == null)
+            if (this.Head != null)
             {
-                returnNode = null;
-            }
-            else
-            {
-                returnNode = this.Head;
-                this.Head.Next = this.Head;
-                this.Head.Previous = null;
+                returnData = this.Head.Data;
+                tempNode = Head;
+                this.Head = this.Head.Next;
+                if (this.Head != null)
+                {
+                    this.Head.Previous = null;
+                }
+                tempNode.Next = null;
                 this.Length--;
             }
 
-            return returnNode;
+            return returnData;
         }
     }
 }

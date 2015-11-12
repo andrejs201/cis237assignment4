@@ -8,23 +8,25 @@ namespace cis237assignment4
 {
     class GenericQueue<T> : GenericLinkedList<T>
     {
-        public GenericNode<T> Dequeue()
+        public T Dequeue()
         {
-            GenericNode<T> returnNode = new GenericNode<T>();
+            T returnData = default(T);
+            GenericNode<T> tempNode = new GenericNode<T>();
 
-            if (this.Tail == null)
+            if (this.Tail != null)
             {
-                returnNode = null;
-            }
-            else
-            {
-                returnNode = this.Tail;
-                this.Tail.Previous = this.Tail;
-                this.Tail.Next = null;
+                returnData = this.Tail.Data;
+                tempNode = Tail;
+                this.Tail = this.Tail.Previous;
+                if (this.Tail != null)
+                {
+                    this.Tail.Next = null;
+                }
+                tempNode.Previous = null;
                 this.Length--;
             }
 
-            return returnNode;
+            return returnData;
         }
     }
 }
